@@ -7,10 +7,10 @@ Contacts-Managers-App
 
     1) Install Node.js from the official Node.js website.
 
-    3) Open up terminal and run the following commands:
+    2) Open up terminal and run the following commands:
         Command to install all the packages: $ npm install
     
-    2) Install a simple monitor script for use during development of this node.js app. 
+    3) Install a simple monitor script for use during development of this node.js app. 
         Command to install nodemon: $ npm install nodemon
 
     4) Start nodemon and you are good to go: $ nodemon server.js
@@ -22,4 +22,4 @@ Contacts-Managers-App
 
   Finally, if you would like to build this application on your own using Angular.JS and Bootstrap.CSS, feel free to do so. It would help you learn a lot in due course.
 
-  Thank you are taking the time to look at this application. :)
+  Thank you for taking the time to look at this application. :)
