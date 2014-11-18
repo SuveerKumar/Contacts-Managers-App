@@ -1,0 +1,43 @@
+<div id="contact-form" class="row">
+  <div class="col-md-8 col-sm-offset-2">
+    <form class="form-horizontal" role="form" name="addContactForm" ng-model-options="{ debounce: { default: 500, blur: 0 }  }">
+      <div class="form-group">
+        <label for="firstName" class="col-sm-2 control-label">First Name</label>
+        <div class="col-sm-10">
+          <input type="text" name="firstName" class="form-control" id="firstName" ng-model="formData.firstName" placeholder="Enter First Name" required>
+          <div class="alert alert-danger text-center" role="alert" ng-show="addContactForm.firstName.$error.required==true &amp;&amp; addContactForm.firstName.$dirty"><strong>Oh Snap!</strong> Wanna enter the First Name?</div>
+        </div>
+      </div>
+      <div class="form-group">
+        <label for="lastName" class="col-sm-2 control-label">Last Name</label>
+        <div class="col-sm-10">
+          <input type="text" name="lastName" class="form-control" id="lastName" ng-model="formData.lastName" placeholder="Enter Last Name" required>
+          <div class="alert alert-danger text-center" role="alert" ng-show="addContactForm.lastName.$error.required==true &amp;&amp; addContactForm.lastName.$dirty"><strong>Oh Snap!</strong> Wanna enter the Last Name?</div>
+        </div>
+      </div>
+      <div class="form-group">
+        <label for="phoneNumber" class="col-sm-2 control-label">Phone</label>
+        <div class="col-sm-10">
+          <input type="number" name="phone" class="form-control" id="phoneNumber" ng-model="formData.phone" placeholder="Enter Phone Number" required>
+          <div class="alert alert-danger text-center" role="alert" ng-show="(addContactForm.phone.$error.required==true || addContactForm.phone.$error.number==true) &amp;&amp; addContactForm.phone.$dirty"><strong>Oh Snap!</strong> Wanna enter the Phone Number again?</div>
+        </div>
+      </div>
+      <div class="form-group">
+        <label for="inputEmail" class="col-sm-2 control-label">Email</label>
+        <div class="col-sm-10">
+          <input type="email" name="email" class="form-control" id="inputEmail" ng-model="formData.email" placeholder="Enter Email" required>
+          <div class="alert alert-danger text-center" role="alert" ng-show="(addContactForm.email.$error.required==true || addContactForm.email.$error.email==true) &amp;&amp; addContactForm.email.$dirty"><strong>Oh Snap!</strong> Please enter a valid Email!</div>
+        </div>
+      </div>
+      <div class="form-group">
+        <div class="col-sm-offset-2 col-sm-10">
+          <div class="checkbox">
+            <label>
+              <input type="checkbox" name="favourite" ng-model="formData.favourite"> Add To Favourites
+            </label>
+          </div>
+        </div>
+      </div>
+    </form>
+  </div>
+</div>
