@@ -13,3 +13,5 @@ Contacts-Managers-App
     3) Now run the following command to install all the packages: $ npm install
 
     4) Start nodemon and you are good to go: $ nodemon server.js
+
+    5) Hit the following URL to start the Contacts Managers App: http://localhost:8080/
