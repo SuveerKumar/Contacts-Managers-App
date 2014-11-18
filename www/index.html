@@ -5,7 +5,7 @@
 <html >
 <head>
 
-    <title>Node/Angular Contacts Manager App</title>
+    <title>Angular/Node Contacts Manager App</title>
 
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.0/css/bootstrap.min.css"><!-- load bootstrap -->
 
@@ -17,7 +17,7 @@
     <script src="controllers/contacts.controller.js"></script>
     <script src="directives/addContact.js"></script>
     <script src="filters/contactsManager.filters.js"></script>
-    <script src="services/getContacts.service.js"></script>
+    <script src="services/contactsModel.service.js"></script>
     
 
 </head>
@@ -30,45 +30,10 @@
             <h1>My Contacts <span class="label label-info">{{ contacts.length }}</span></h1>
         </div>
 
-        <!-- TODO LIST -->
+        <!-- CONTACTS LIST -->
         <div id="contacts-list" class="row">
           <div class="col-md-8 col-sm-offset-2">
 
-            <!-- LOOP OVER THE CONTACTS IN $scope.contacts -->
-            <table class="table table-striped">
-              <thead>
-                <tr>
-                  <th class="text-center">First Name</th>
-                  <th class="text-center">Last Name</th>   
-                  <th class="text-center">Phone</th>
-                  <th class="text-center">Email Id</th>
-                  <th class="text-center">Added to Fav List</th>
-                  <th ng-show="contacts.length!=0"></th>
-                  <th ng-show="contacts.length!=0"></th>
-                </tr>
-              </thead>
-              <tbody ng-repeat="contact in contacts">
-                <tr>
-                  <td class="text-center">{{contact.firstName | capitalCase}}</td>
-                  <td class="text-center">{{contact.lastName | capitalCase}}</td>
-                  <td class="text-center">{{contact.phone}}</td>
-                  <td class="text-center">{{contact.email}}</td>
-                  <td class="text-center">
-                    <div class="glyphicon glyphicon-thumbs-up" ng-show="contact.favourite"></div>
-                    <div class="glyphicon glyphicon-thumbs-down" ng-show="!contact.favourite"></div>
-                  </td>
-                  <td class="text-center">
-                    <div class="btn btn-primary" ng-click="editContact(contact)" data-toggle="modal" data-target="#myModal">Edit</div>
-                  </td>
-                  <td class="text-center">
-                    <div class="btn btn-default glyphicon glyphicon-remove-sign" ng-click="deleteContact(contact._id)"></div>
-                  </td>
-                </tr>
-              </tbody>
-            </table>
-
-            <br>
-            <br>
             <br>
 
             <div class="form-group">
@@ -79,7 +44,6 @@
                 </button>
               </div>
             </div>
-
             <!-- Modal -->
             <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
               <div class="modal-dialog modal-lg">
@@ -99,6 +63,46 @@
                 </div>
               </div>
             </div>
+
+            <br>
+            <br>
+            <br>
+            <br>
+
+            <!-- LOOP OVER THE CONTACTS IN $scope.contacts -->
+            <table class="table table-striped" ng-show="contacts.length!=0">
+              <thead>
+                <tr>
+                  <th class="text-center">#</th>
+                  <th class="text-center">First Name</th>
+                  <th class="text-center">Last Name</th>   
+                  <th class="text-center">Phone</th>
+                  <th class="text-center">Email Id</th>
+                  <th class="text-center">Added to Fav List</th>
+                  <th></th>
+                  <th></th>
+                </tr>
+              </thead>
+              <tbody ng-repeat="contact in contacts">
+                <tr>
+                  <td class="text-center">{{$index+1}}</td>
+                  <td class="text-center">{{contact.firstName | capitalCase}}</td>
+                  <td class="text-center">{{contact.lastName | capitalCase}}</td>
+                  <td class="text-center">{{contact.phone}}</td>
+                  <td class="text-center">{{contact.email}}</td>
+                  <td class="text-center">
+                    <div class="glyphicon glyphicon-thumbs-up" ng-show="contact.favourite"></div>
+                    <div class="glyphicon glyphicon-thumbs-down" ng-show="!contact.favourite"></div>
+                  </td>
+                  <td class="text-center">
+                    <div class="btn btn-primary" ng-click="editContact(contact)" data-toggle="modal" data-target="#myModal">Edit</div>
+                  </td>
+                  <td class="text-center">
+                    <div class="btn btn-default glyphicon glyphicon-remove-sign" ng-click="deleteContact(contact._id)"></div>
+                  </td>
+                </tr>
+              </tbody>
+            </table>
 
           </div>
         </div>

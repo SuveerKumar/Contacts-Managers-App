@@ -1,4 +1,4 @@
-contactsManager
+angular.module('contactsManager')
   .directive('addContact', function(){
     return {
       restrict: 'A',
