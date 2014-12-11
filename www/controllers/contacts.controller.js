@@ -38,6 +38,7 @@ angular.module('contactsManager')
         });
     };
 
+    // function to edit a contact
     $scope.editContact = function(contact){
       $scope.action = 'Edit';
       $scope.formData = contact;
